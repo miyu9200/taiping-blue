@@ -1,25 +1,24 @@
 # Taiping Blue｜太平藍
 
-前台與作品管理後台整合的太平藍展示專案。前台沿用 `index.html`；GitHub Pages 版本由 `backend/admin.html` 透過 GitHub Contents API 更新 `backend/data/products.json`，不需要常駐 Node.js 服務。
+GitHub Pages 展示網站與 GitHub API 作品管理後台。前台沿用原始 `index.html`，後台可直接新增、編輯、刪除、重置作品及上傳圖片，資料會更新到同一個儲存庫。
 
-## GitHub Pages 展示版
+## 線上網址
 
-將儲存庫設為 Public（GitHub Free 的 Pages 方案），到 **Settings → Pages** 選擇 `main` 分支與根目錄 `/`。網站網址會是 `https://miyu9200.github.io/taiping-blue/`。
+- 前台：<https://miyu9200.github.io/taiping-blue/>
+- 作品管理後台：<https://miyu9200.github.io/taiping-blue/backend/admin.html>
 
-後台展示頁：`https://miyu9200.github.io/taiping-blue/backend/admin.html`
+## 後台使用方式
 
-後台需要一組 GitHub Fine-grained Personal Access Token，且對此儲存庫開啟 **Contents: Read and write** 權限。每次新增、編輯、刪除或重置會直接提交 `backend/data/products.json`；GitHub Pages 更新可能需要短暫等待。
+1. 使用具備此儲存庫寫入權限的 GitHub 帳號建立 Fine-grained Personal Access Token。
+2. Token 只需要 `taiping-blue` 儲存庫的 `Contents: Read and write`，以及必要的 `Metadata: Read-only`。
+3. 在後台輸入自己的 Token 登入。每次儲存會直接提交商品 JSON 或圖片檔案，GitHub Pages 完成更新後前台即可看到變更。
 
-## 本機啟動（舊版 Node API）
+請勿共用 Token；每位組員都應使用自己的 GitHub 帳號與 Token。Token 只暫存在目前瀏覽器分頁中。
 
-```powershell
-npm start
-```
+## 專案結構
 
-- 前台：`http://127.0.0.1:4173/`
-- 後台：`http://127.0.0.1:4173/tbx-7f3c9a2e-d4b8-6e1a`
-- 本機預設密碼：`1234`
-
-部署前請設定 `ADMIN_PASSWORD` 與 `ADMIN_PATH` 環境變數。這個本機 Node API 版本仍可用於 localhost 測試；GitHub Pages 展示版則使用上方的 GitHub API 管理模式。
-
-更多本機與部署說明請參考 [`README-localhost.md`](README-localhost.md)。
+- `index.html`：GitHub Pages 前台入口。
+- `backend/admin.html`：作品管理後台。
+- `backend/data/products.json`：目前展示作品資料。
+- `backend/data/default-products.json`：重置預設作品時使用的資料。
+- `.nojekyll`：讓 GitHub Pages 直接提供靜態檔案。

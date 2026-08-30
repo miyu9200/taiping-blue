@@ -13,5 +13,3 @@ taiping-blue-site/
 # Local secrets and environment overrides
 .env
 .env.*
-!.env.example
-
