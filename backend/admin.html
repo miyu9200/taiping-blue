@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TAIPING BLUE｜作品管理後台</title>
+  <style>
+    :root{--ink:#17163d;--blue:#292966;--gold:#f5c945;--pink:#c73d78;--paper:#f6f7fb;--line:#dfe3ee;--muted:#68708b;--ok:#16794e;--danger:#b3224e}
+    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Noto Sans TC",sans-serif} button,input,textarea,select{font:inherit} button{cursor:pointer;border:0}
+    .topbar{height:72px;background:var(--ink);color:white;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:4;box-shadow:0 4px 18px #10102d22}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em}.brand-mark{width:42px;height:42px;border-radius:11px;background:#3d6fba;display:grid;place-items:center;color:white;font-weight:900;font-size:11px;text-align:center;line-height:1.05}.top-actions{display:flex;align-items:center;gap:10px}.top-actions a,.top-actions button{background:#ffffff18;color:white;border:1px solid #ffffff35;border-radius:9px;padding:9px 13px;text-decoration:none;font-size:13px}.top-actions button:hover,.top-actions a:hover{background:#ffffff2b}
+    .shell{max-width:1320px;margin:0 auto;padding:32px 24px 60px}.login-wrap{min-height:calc(100vh - 72px);display:grid;place-items:center;padding:32px}.login-card{width:min(430px,100%);background:white;border:1px solid var(--line);border-radius:22px;padding:34px;box-shadow:0 18px 50px #19205d16}.eyebrow{color:var(--pink);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.login-card h1{margin:10px 0 8px;font-size:28px}.login-card p{color:var(--muted);font-size:14px;line-height:1.7}.field{display:grid;gap:7px;margin:14px 0}.field label{font-size:13px;font-weight:800}.field input,.field textarea,.field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);outline:none}.field textarea{min-height:84px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:#5367bf;box-shadow:0 0 0 3px #5367bf20}.primary{background:var(--ink);color:#fff;padding:11px 16px;border-radius:10px;font-weight:800}.primary:hover{background:#292766}.gold{background:var(--gold);color:var(--ink);padding:11px 16px;border-radius:10px;font-weight:800}.danger{color:var(--danger);background:#fff0f4;border:1px solid #f5c2d2;padding:8px 11px;border-radius:9px;font-weight:700}.ghost{color:var(--blue);background:white;border:1px solid var(--line);padding:9px 12px;border-radius:9px;font-weight:700}.error{color:var(--danger);background:#fff0f4;border:1px solid #f5c2d2;border-radius:9px;padding:10px 12px;font-size:13px;margin-top:12px}.hidden{display:none!important}
+    .heading{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-bottom:24px}.heading h1{margin:5px 0 0;font-size:30px}.heading p{margin:8px 0 0;color:var(--muted);font-size:14px}.actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:18px}.stat span{display:block;color:var(--muted);font-size:12px;font-weight:700}.stat strong{display:block;font-size:28px;margin-top:7px}.panel{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden}.panel-head{display:flex;justify-content:space-between;align-items:center;padding:17px 19px;border-bottom:1px solid var(--line)}.panel-head h2{margin:0;font-size:16px}.table-wrap{overflow:auto}.products{width:100%;border-collapse:collapse;min-width:760px}.products th,.products td{padding:13px 16px;text-align:left;border-bottom:1px solid #edf0f6;font-size:13px;vertical-align:middle}.products th{background:#fafbfe;color:var(--muted);font-size:11px;letter-spacing:.05em}.products tr:last-child td{border-bottom:0}.thumb{width:56px;height:44px;object-fit:cover;border-radius:8px;background:#edf0fa;border:1px solid var(--line)}.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef0ff;color:var(--blue);font-size:11px;font-weight:800}.row-actions{display:flex;gap:7px;justify-content:flex-end}.empty{text-align:center;padding:45px;color:var(--muted)}
+    .modal{position:fixed;inset:0;background:#111333b8;display:grid;place-items:center;padding:20px;z-index:10}.modal-card{background:white;border-radius:18px;width:min(850px,100%);max-height:calc(100vh - 40px);overflow:auto;box-shadow:0 25px 70px #08082255}.modal-head{display:flex;align-items:center;justify-content:space-between;padding:19px 22px;border-bottom:1px solid var(--line);position:sticky;top:0;background:white;z-index:1}.modal-head h2{margin:0;font-size:19px}.close{background:#f0f2f8;color:var(--muted);border-radius:50%;width:32px;height:32px;font-size:20px}.form-body{padding:21px 22px}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-footer{display:flex;justify-content:flex-end;gap:9px;border-top:1px solid var(--line);padding:16px 22px;position:sticky;bottom:0;background:white}.upload-row{display:flex;gap:8px;align-items:center}.upload-row input[type=file]{font-size:12px;max-width:100%}.preview{display:flex;align-items:center;gap:10px;margin-top:9px;color:var(--muted);font-size:12px}.preview img{width:84px;height:62px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}.toast{position:fixed;right:22px;bottom:22px;padding:12px 15px;border-radius:10px;background:var(--ink);color:#fff;box-shadow:0 10px 30px #11133333;z-index:20;font-size:13px}.toast.bad{background:var(--danger)}
+    @media(max-width:720px){.topbar{padding:0 15px}.top-actions a{display:none}.shell{padding:24px 14px 45px}.heading{display:block}.actions{justify-content:flex-start;margin-top:15px}.stats{grid-template-columns:1fr}.two{grid-template-columns:1fr}.modal{padding:9px}.modal-card{max-height:calc(100vh - 18px)}.form-body{padding:16px}.form-footer{padding:13px 16px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">太平藍</div><span>TAIPING BLUE｜作品管理</span></div>
+    <div id="top-actions" class="top-actions hidden"><a href="/" target="_blank">觀看前台</a><button id="logout-btn" type="button">登出</button></div>
+  </header>
+
+  <main id="login-view" class="login-wrap">
+    <section class="login-card">
+      <div class="eyebrow">Private workspace</div>
+      <h1>登入管理後台</h1>
+      <p>登入後即可管理前台作品、圖片與導覽內容。這個後台僅供管理者使用。</p>
+      <form id="login-form">
+        <div class="field"><label for="password">管理員密碼</label><input id="password" type="password" autocomplete="current-password" required placeholder="請輸入密碼"></div>
+        <button class="primary" type="submit" style="width:100%">登入後台</button>
+      </form>
+      <div id="login-error" class="error hidden"></div>
+    </section>
+  </main>
+
+  <main id="dashboard-view" class="shell hidden">
+    <div class="heading"><div><div class="eyebrow">Content management</div><h1>作品管理中心</h1><p>這裡的修改會直接同步到前台網站。</p></div><div class="actions"><button id="new-btn" class="gold" type="button">＋ 新增作品</button><button id="reset-btn" class="danger" type="button">重置預設</button></div></div>
+    <section class="stats"><div class="stat"><span>作品總數</span><strong id="stat-total">0</strong></div><div class="stat"><span>分類數</span><strong id="stat-categories">0</strong></div><div class="stat"><span>已使用自訂圖片</span><strong id="stat-images">0</strong></div></section>
+    <section class="panel"><div class="panel-head"><h2>全部作品</h2><button id="refresh-btn" class="ghost" type="button">重新載入</button></div><div class="table-wrap"><table class="products"><thead><tr><th>圖片</th><th>作品名稱</th><th>分類</th><th>Pinkoi</th><th>操作</th></tr></thead><tbody id="product-list"></tbody></table></div></section>
+  </main>
+
+  <div id="editor-modal" class="modal hidden"><section class="modal-card"><div class="modal-head"><h2 id="editor-title">新增作品</h2><button id="close-editor" class="close" type="button">×</button></div><form id="editor-form"><div class="form-body"><div class="two"><div class="field"><label for="name">作品名稱</label><input id="name" required></div><div class="field"><label for="category">分類</label><select id="category"><option>配件</option><option>家飾</option><option>服飾</option></select></div></div><div class="two"><div class="field"><label for="pinkoiUrl">Pinkoi 商品網址</label><input id="pinkoiUrl" type="url" required></div><div class="field"><label for="img">作品圖片網址</label><input id="img" required placeholder="上傳圖片後會自動填入"></div></div><div class="field"><label for="image-file">上傳本機圖片（PNG、JPG、GIF、WebP，10 MB 內）</label><div class="upload-row"><input id="image-file" type="file" accept="image/png,image/jpeg,image/gif,image/webp"></div><div id="preview" class="preview hidden"><img id="preview-image" alt="圖片預覽"><span id="preview-text"></span></div></div><div class="field"><label for="shortDesc">簡短描述</label><input id="shortDesc" required></div><div class="two"><div class="field"><label for="concept">商品理念</label><textarea id="concept"></textarea></div><div class="field"><label for="process">如何生成</label><textarea id="process"></textarea></div><div class="field"><label for="timing">使用時機</label><textarea id="timing"></textarea></div><div class="field"><label for="detail">產品介紹</label><textarea id="detail"></textarea></div></div><div class="field"><label for="fullTranscript">語音導覽全文</label><textarea id="fullTranscript" required></textarea><button id="autogen-btn" class="ghost" type="button" style="justify-self:start">由上方內容合成導覽稿</button></div></div><div class="form-footer"><button id="cancel-editor" class="ghost" type="button">取消</button><button class="primary" type="submit">儲存作品</button></div></form></section></div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script>
+    const $ = id => document.getElementById(id);
+    let products = [];
+    let editingId = '';
+    let toastTimer;
+
+    function showToast(message, bad = false) {
+      const toast = $('toast');
+      toast.textContent = message;
+      toast.classList.toggle('bad', bad);
+      toast.classList.remove('hidden');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.add('hidden'), 3000);
+    }
+
+    async function api(url, options = {}) {
+      const response = await fetch(url, { credentials: 'same-origin', ...options });
+      if (response.status === 401) throw new Error('LOGIN_REQUIRED');
+      if (!response.ok) {
+        let detail = '';
+        try { detail = (await response.json()).error || ''; } catch (_) {}
+        throw new Error(detail || `Request failed: ${response.status}`);
+      }
+      return response;
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    }
+
+    async function loadProducts() {
+      const response = await api('/api/products');
+      products = await response.json();
+      renderProducts();
+    }
+
+    function renderProducts() {
+      $('stat-total').textContent = products.length;
+      $('stat-categories').textContent = new Set(products.map(product => product.category).filter(Boolean)).size;
+      $('stat-images').textContent = products.filter(product => /^\/uploads\//.test(product.img || '')).length;
+      $('product-list').innerHTML = products.length ? products.map(product => `<tr><td><img class="thumb" src="${escapeHtml(product.img || '')}" alt=""></td><td><strong>${escapeHtml(product.name)}</strong></td><td><span class="tag">${escapeHtml(product.category)}</span></td><td><a href="${escapeHtml(product.pinkoiUrl || '#')}" target="_blank" rel="noopener">開啟</a></td><td><div class="row-actions"><button class="ghost edit-product" data-id="${escapeHtml(product.id)}" type="button">編輯</button><button class="danger delete-product" data-id="${escapeHtml(product.id)}" type="button">刪除</button></div></td></tr>`).join('') : '<tr><td colspan="5" class="empty">目前沒有作品資料</td></tr>';
+      document.querySelectorAll('.edit-product').forEach(button => button.addEventListener('click', () => openEditor(button.dataset.id)));
+      document.querySelectorAll('.delete-product').forEach(button => button.addEventListener('click', () => deleteProduct(button.dataset.id)));
+    }
+
+    function setField(id, value) { $(id).value = value || ''; }
+
+    function openEditor(id = '') {
+      editingId = id;
+      const product = products.find(item => item.id === id);
+      $('editor-title').textContent = product ? '編輯作品' : '新增作品';
+      setField('name', product?.name); setField('category', product?.category || '配件'); setField('pinkoiUrl', product?.pinkoiUrl || 'https://www.pinkoi.com/store/taiping-blue'); setField('img', product?.img); setField('shortDesc', product?.shortDesc); setField('concept', product?.concept); setField('process', product?.process); setField('timing', product?.timing); setField('detail', product?.detail); setField('fullTranscript', product?.fullTranscript);
+      showPreview(product?.img || '', product?.img ? '目前圖片' : '');
+      $('image-file').value = '';
+      $('editor-modal').classList.remove('hidden');
+    }
+
+    function closeEditor() { $('editor-modal').classList.add('hidden'); }
+
+    function showPreview(src, label) {
+      if (!src) { $('preview').classList.add('hidden'); return; }
+      $('preview-image').src = src; $('preview-text').textContent = label; $('preview').classList.remove('hidden');
+    }
+
+    async function uploadImage(file) {
+      if (!file) return;
+      if (file.size > 10 * 1024 * 1024) throw new Error('圖片不可超過 10 MB');
+      const form = new FormData(); form.append('image', file);
+      const response = await api('/api/upload', { method: 'POST', body: form });
+      const result = await response.json();
+      setField('img', result.url); showPreview(result.url, `${file.name}（已上傳）`); showToast('圖片上傳成功');
+    }
+
+    async function saveProduct(event) {
+      event.preventDefault();
+      const product = { id: editingId || undefined, name: $('name').value.trim(), category: $('category').value, pinkoiUrl: $('pinkoiUrl').value.trim(), img: $('img').value.trim(), shortDesc: $('shortDesc').value.trim(), concept: $('concept').value.trim(), process: $('process').value.trim(), timing: $('timing').value.trim(), detail: $('detail').value.trim(), fullTranscript: $('fullTranscript').value.trim() };
+      try {
+        const endpoint = editingId ? `/api/products/${encodeURIComponent(editingId)}` : '/api/products';
+        await api(endpoint, { method: editingId ? 'PUT' : 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(product) });
+        closeEditor(); await loadProducts(); showToast('作品已儲存');
+      } catch (error) { showToast(error.message === 'LOGIN_REQUIRED' ? '登入已過期，請重新登入' : error.message, true); }
+    }
+
+    async function deleteProduct(id) {
+      const product = products.find(item => item.id === id);
+      if (!product) { showToast('找不到要刪除的作品。', true); return; }
+      const buttons = document.querySelectorAll(`.delete-product[data-id="${CSS.escape(id)}"]`);
+      buttons.forEach(button => { button.disabled = true; button.textContent = '刪除中…'; });
+      try {
+        const response = await api(`/api/products/${encodeURIComponent(id)}`, { method: 'DELETE' });
+        if (!response.ok) throw new Error('後端沒有確認刪除結果');
+        products = products.filter(item => item.id !== id);
+        renderProducts();
+        showToast(`「${product.name}」已刪除`);
+      } catch (error) {
+        buttons.forEach(button => { button.disabled = false; button.textContent = '刪除'; });
+        showToast(error.message === 'LOGIN_REQUIRED' ? '登入已過期，請重新登入' : error.message, true);
+      }
+    }
+
+    $('login-form').addEventListener('submit', async event => {
+      event.preventDefault(); $('login-error').classList.add('hidden');
+      try {
+        const response = await fetch('/api/auth/login', { method:'POST', credentials:'same-origin', headers:{'Content-Type':'application/json'}, body:JSON.stringify({password:$('password').value}) });
+        if (!response.ok) throw new Error('密碼錯誤，請再試一次');
+        $('login-view').classList.add('hidden'); $('dashboard-view').classList.remove('hidden'); $('top-actions').classList.remove('hidden'); await loadProducts();
+      } catch (error) { $('login-error').textContent = error.message; $('login-error').classList.remove('hidden'); }
+    });
+    $('logout-btn').addEventListener('click', () => location.reload());
+    $('new-btn').addEventListener('click', () => openEditor()); $('refresh-btn').addEventListener('click', () => loadProducts().catch(error => showToast(error.message, true))); $('close-editor').addEventListener('click', closeEditor); $('cancel-editor').addEventListener('click', closeEditor); $('editor-form').addEventListener('submit', saveProduct);
+    $('image-file').addEventListener('change', event => uploadImage(event.target.files[0]).catch(error => showToast(error.message, true)));
+    $('autogen-btn').addEventListener('click', () => { $('fullTranscript').value = ['concept','process','timing','detail'].map(id => $(id).value.trim()).filter(Boolean).join('\n'); });
+    $('reset-btn').addEventListener('click', async () => { if(!confirm('確定恢復六筆預設作品嗎？'))return; try{await api('/api/products/reset',{method:'POST'});await loadProducts();showToast('已恢復預設作品')}catch(error){showToast(error.message,true)} });
+  </script>
+</body>
+</html>

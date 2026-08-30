@@ -1,0 +1,9 @@
+{
+  "name": "taiping-blue",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Taiping Blue existing index.html with a local API backend",
+  "scripts": {
+    "start": "node backend/server.js"
+  }
+}

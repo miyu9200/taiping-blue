@@ -1,0 +1,17 @@
+# Local runtime and temporary work files
+node_modules/
+.tmp-ppt-inspect/
+.tmp-site-build/
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Source files kept outside this deployable project
+taiping-blue-app/
+taiping-blue-site/
+最新-115.8.30客家藍染世界接軌.pptx
+
+# Local secrets and environment overrides
+.env
+.env.*
+!.env.example
+
