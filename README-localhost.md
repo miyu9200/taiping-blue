@@ -1,6 +1,6 @@
 # 太平藍 Taiping Blue 本機版
 
-這個專案直接使用原本的 `index.html` 作為唯一前端入口，沒有另外建立新的前端 index.html。畫面、版面、圖片、文字與既有互動均保留；作品資料與圖片上傳改由本機後端 API 保存。
+這個專案直接使用原本的 `index.html` 作為唯一前端入口，沒有另外建立新的前端 index.html。畫面、版面、圖片、文字與既有互動均保留；localhost 可使用 Node API，GitHub Pages 展示版則由後台透過 GitHub API 更新商品 JSON。
 
 ## 專案位置
 

@@ -1549,18 +1549,34 @@ const defaultProductsData = [
           }
         ];
 
-        // Product data is now owned by the backend. The browser only keeps
-        // transient UI state and image previews; it no longer uses localStorage
-        // as the source of truth.
+        // GitHub Pages mode reads the catalogue from the repository. When the
+        // local Node server is running we still prefer its API, then fall back
+        // to the committed JSON file so the same page works in both modes.
         let productsData = [];
         let productsReady = false;
 
         async function loadProductsData() {
-            const response = await fetch('/api/products', { headers: { 'Accept': 'application/json' } });
-            if (!response.ok) throw new Error(`Product API failed: ${response.status}`);
-            const data = await response.json();
-            if (!Array.isArray(data)) throw new Error('Product API returned invalid data');
-            return data;
+            const candidates = [];
+            if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+                candidates.push('/api/products');
+            }
+            candidates.push(new URL('backend/data/products.json', document.baseURI).href);
+            for (const source of candidates) {
+                try {
+                    const separator = source.includes('?') ? '&' : '?';
+                    const response = await fetch(`${source}${separator}v=${Date.now()}`, {
+                        headers: { 'Accept': 'application/json' },
+                        cache: 'no-store'
+                    });
+                    if (!response.ok) continue;
+                    const data = await response.json();
+                    if (Array.isArray(data)) return data;
+                } catch (_) {
+                    // Try the next source; the committed JSON is the Pages fallback.
+                }
+            }
+            if (Array.isArray(defaultProductsData)) return [...defaultProductsData];
+            throw new Error('商品資料讀取失敗');
         }
 
         async function apiFetch(input, init = {}) {
