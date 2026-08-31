@@ -319,45 +319,6 @@
                         </div>
                     </div>
 
-                    <!-- Voice Guide Widget -->
-                    <div class="w-full flex justify-center mt-1 sm:mt-2">
-                        <div class="glass-dark p-6 rounded-3xl max-w-sm w-full border border-indigo-400/30 text-center space-y-4 shadow-2xl relative">
-                            <div class="absolute -top-3 -right-3 bg-amber-400 text-indigo-950 text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
-                                <i class="fa-solid fa-wand-magic-sparkles text-indigo-950"></i>
-                                <span>Gemini AI 真人語音</span>
-                            </div>
-                            <div class="w-20 h-20 rounded-full mx-auto bg-gradient-to-tr from-indigo-500 via-amber-200 to-indigo-200 p-1 shadow-inner relative">
-                                <img id="guide-avatar-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Guide Avatar" class="w-full h-full object-cover rounded-full">
-                                <div id="voice-waves" class="hidden absolute inset-0 rounded-full border-2 border-amber-300 animate-ping opacity-75"></div>
-                            </div>
-                            <div>
-                                <h3 class="font-serif font-bold text-lg text-white" data-i18n="guide_title">太平藍 語音導覽員</h3>
-                                <p id="guide-status-text" class="text-xs text-indigo-200 mt-1" data-i18n="guide_desc">點擊展區任何作品，即為您說故事</p>
-                            </div>
-
-                            <div class="bg-indigo-950/80 p-3 rounded-2xl border border-indigo-700/60 space-y-2">
-                                <div class="flex items-center justify-between text-xs text-indigo-200">
-                                    <span class="font-medium"><i class="fa-solid fa-microphone text-amber-300 mr-1.5"></i><span data-i18n="guide_voice">導覽音色：</span></span>
-                                    <select id="voice-select" onchange="changeVoiceSetting()" class="bg-indigo-900 text-white rounded-lg px-2.5 py-1 text-xs border border-indigo-500 focus:outline-none focus:ring-1 focus:ring-amber-300">
-                                        <option value="Aoede">👩🏻 典雅女聲 ‧ 輕柔細緻 (Aoede)</option>
-                                        <option value="Kore">👩🏻‍💼 知性端莊 ‧ 專業溫和 (Kore)</option>
-                                        <option value="Zephyr">👨🏻‍💼 溫和男聲 ‧ 沉穩典雅 (Zephyr)</option>
-                                        <option value="Puck">👦🏻 活潑青年 ‧ 生動朗暢 (Puck)</option>
-                                        <option value="Fenrir">👨🏻 磁性男聲 ‧ 質感說書 (Fenrir)</option>
-                                        <option value="Charon">🧔🏻 工藝職人 ‧ 溫厚故事 (Charon)</option>
-                                    </select>
-                                </div>
-
-                                <div id="audio-playback-bar" class="hidden pt-2 border-t border-indigo-800/60 flex items-center justify-between">
-                                    <span id="playing-title" class="text-[11px] text-amber-200 font-medium truncate max-w-[180px]">準備導覽中...</span>
-                                    <button onclick="toggleGlobalAudioPlay()" class="px-3 py-1 rounded-full bg-amber-400 text-indigo-950 font-bold text-xs hover:bg-amber-300 transition flex items-center gap-1">
-                                        <i id="global-play-icon" class="fa-solid fa-pause"></i>
-                                        <span id="global-play-text">暫停</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -947,7 +908,6 @@
         let isPlayingAudio = false;
         let isTourMode = false;
         let tourIndex = 0;
-        let currentVoice = 'Aoede';
         let currentCategory = 'all';
         let currentAudioElement = null;
 
@@ -975,7 +935,7 @@
                 hero_title: "取之於藍，青勝於藍<br><span class=\"text-amber-300\">登上國際舞台的台灣天然手染工藝</span>",
                 hero_desc: "起源於921震後陪伴社區重建的深厚溫情，「太平藍」由財團法人水源地文教基金會輔導創立，堅持純天然馬藍與植物發酵染色，運用絞染、縫染、型染與板夾染等四傳統防染技法，揉合客家紋樣與現代美學。",
                 hero_btn_explore: "開始語音巡禮導覽",
-                guide_title: "太平藍 語音導覽員", guide_desc: "點擊展區任何作品，即為您說故事", guide_voice: "導覽音色：",
+                guide_title: "太平藍 語音導覽員", guide_desc: "點擊展區任何作品，即為您說故事",
                 sec_subtitle: "Taiping Blue Exhibition", sec_title: "太平藍 典藏展品導覽區", btn_add_product: "新增藍染作品",
                 cat_all: "全系列作品 ALL", cat_acc: "穿搭配件 ACCESSORIES", cat_decor: "生活家飾 DECOR", cat_apparel: "工藝服飾 APPAREL",
                 news_subtitle: "Honors & Media Coverage", news_title: "榮譽獎項與新聞報導", news_tip: "點擊報導標題即可開啟新聞報導網址", news_read_more: "閱讀完整報導",
@@ -1041,7 +1001,7 @@
                 hero_title: "Surpassing Pure Blue<br><span class=\"text-amber-300\">Taiwanese Natural Indigo Craft on the World Stage</span>",
                 hero_desc: "Founded by Young Water Foundation following post-earthquake community reconstruction, Taiping Blue preserves 100% natural plant-fermented indigo dyeing utilizing traditional resist techniques.",
                 hero_btn_explore: "Start Audio Tour",
-                guide_title: "Taiping Blue Audio Guide", guide_desc: "Click any item to listen to its story", guide_voice: "Guide Voice:",
+                guide_title: "Taiping Blue Audio Guide", guide_desc: "Click any item to listen to its story",
                 sec_subtitle: "Taiping Blue Exhibition", sec_title: "Taiping Blue Exhibition Gallery", btn_add_product: "Add Craft Item",
                 cat_all: "All Collections ALL", cat_acc: "Accessories ACCESSORIES", cat_decor: "Home Decor DECOR", cat_apparel: "Craft Apparel APPAREL",
                 news_subtitle: "Honors & Media Coverage", news_title: "Awards & Press Coverage", news_tip: "Click news title to open full media coverage URL", news_read_more: "Read Full Article",
@@ -1107,7 +1067,7 @@
                 hero_title: "青は藍より出でて藍より青し<br><span class=\"text-amber-300\">世界へ羽ばたく台湾の天然藍染工芸</span>",
                 hero_desc: "921大震災後の地域復興から生まれた「太平藍（タイピンブルー）」は、水源地文教基金会の支援のもと設立されました。100%天然のリュウキュウアイ（馬藍）と植物発酵染色にこだわり、絞り染め、縫い染め、型染め、板締め染めの4つの伝統技法を駆使して、客家文様と現代美学を融合させています。",
                 hero_btn_explore: "音声ガイド巡回を開始",
-                guide_title: "太平藍 音声ガイド", guide_desc: "作品をクリックすると解説が流れます", guide_voice: "音声タイプ：",
+                guide_title: "太平藍 音声ガイド", guide_desc: "作品をクリックすると解説が流れます",
                 sec_subtitle: "Taiping Blue Exhibition", sec_title: "太平藍 典藏作品ガイドエリア", btn_add_product: "藍染作品を追加",
                 cat_all: "全作品 ALL", cat_acc: "ファッション雑貨 ACCESSORIES", cat_decor: "インテリア雑貨 DECOR", cat_apparel: "工芸ウェア APPAREL",
                 news_subtitle: "Honors & Media Coverage", news_title: "受賞歴・メディア掲載", news_tip: "見出しをクリックするとニュース記事が開きます", news_read_more: "記事全文を読む",
@@ -1172,7 +1132,7 @@
                 hero_title: "L'Indigo Pur Souflé de Passion<br><span class=\"text-amber-300\">L'artisanat textile taïwanais sur la scène internationale</span>",
                 hero_desc: "Né du soutien communautaire après le séisme du 21 septembre, « Taiping Blue » utilise 100% d'indigo naturel fermenté et quatre techniques traditionnelles de réserve pour créer une mode éco-responsable.",
                 hero_btn_explore: "Démarrer le Guide Audio",
-                guide_title: "Guide Vocal Taiping Blue", guide_desc: "Cliquez sur une œuvre pour écouter son histoire", guide_voice: "Voix du Guide :",
+                guide_title: "Guide Vocal Taiping Blue", guide_desc: "Cliquez sur une œuvre pour écouter son histoire",
                 sec_subtitle: "Taiping Blue Exhibition", sec_title: "Galerie d'Exposition Taiping Blue", btn_add_product: "Ajouter une Création",
                 cat_all: "Toutes les Œuvres ALL", cat_acc: "Accessoires ACCESSORIES", cat_decor: "Maison & Déco DECOR", cat_apparel: "Vêtements APPAREL",
                 news_subtitle: "Honors & Media Coverage", news_title: "Distinctions et Presse", news_tip: "Cliquez sur le titre pour ouvrir l'article", news_read_more: "Lire l'article complet",
@@ -1237,7 +1197,7 @@
                 hero_title: "청출어람, 쪽빛의 미학<br><span class=\"text-amber-300\">세계 무대에 오른 대만 천연 쪽염색 공예</span>",
                 hero_desc: "921 대지진 이후 지역 재건 과정에서 시작된 '타이핑 블루'는 수원지 문화교육재단의 지원으로 설립되었습니다. 100% 천연 식물 발효 쪽염색을 고집하며 4가지 전통 방염 기법으로 객가 문양과 현대 미학을 결합합니다.",
                 hero_btn_explore: "음성 가이드 투어 시작",
-                guide_title: "타이핑 블루 음성 도슨트", guide_desc: "작품을 클릭하시면 이야기를 들려드립니다", guide_voice: "도슨트 음성:",
+                guide_title: "타이핑 블루 음성 도슨트", guide_desc: "작품을 클릭하시면 이야기를 들려드립니다",
                 sec_subtitle: "Taiping Blue Exhibition", sec_title: "타이핑 블루 소장 작품 전시관", btn_add_product: "작품 추가",
                 cat_all: "전체 작품 ALL", cat_acc: "패션 잡화 ACCESSORIES", cat_decor: "홈 데코 DECOR", cat_apparel: "공예 의류 APPAREL",
                 news_subtitle: "Honors & Media Coverage", news_title: "수상 내역 및 언론 보도", news_tip: "보도 제목을 클릭하면 기사 페이지로 이동합니다", news_read_more: "기사 전문 보기",
@@ -1302,7 +1262,7 @@
                 hero_title: "Superando il Blu Più Puro<br><span class=\"text-amber-300\">L'artigianato taiwanese dell'indigo sul palcoscenico mondiale</span>",
                 hero_desc: "Nato dalla ricostruzione comunitaria dopo il terremoto del 1999, « Taiping Blue » preserva la teintura 100% naturale a fermentazione vegetale, unendo motivi Hakka ed estetica moderna.",
                 hero_btn_explore: "Inizia la Visita Guidata",
-                guide_title: "Guida Vocale Taiping Blue", guide_desc: "Clicca su qualsiasi opera per ascoltarne la storia", guide_voice: "Voce della Guida:",
+                guide_title: "Guida Vocale Taiping Blue", guide_desc: "Clicca su qualsiasi opera per ascoltarne la storia",
                 sec_subtitle: "Taiping Blue Exhibition", sec_title: "Galleria Espositiva Taiping Blue", btn_add_product: "Aggiungi Opera",
                 cat_all: "Tutte le Opere ALL", cat_acc: "Accessori Moda ACCESSORIES", cat_decor: "Arredo Casa DECOR", cat_apparel: "Abbigliamento APPAREL",
                 news_subtitle: "Honors & Media Coverage", news_title: "Riconoscimenti e Stampa", news_tip: "Clicca sul titolo della notizia per aprire il link completo", news_read_more: "Leggi articolo completo",
@@ -2371,14 +2331,6 @@ const defaultProductsData = [
 
                 if (modalPlayIcon) modalPlayIcon.className = "fa-solid fa-volume-high text-amber-300";
                 if (modalPlayText) modalPlayText.textContent = i18nDict[currentLang]?.btn_play || "播放完整故事導覽";
-            }
-        }
-
-        function changeVoiceSetting() {
-            const select = document.getElementById('voice-select');
-            if (select) {
-                currentVoice = select.value;
-                showToast(`Voice set to: ${select.options[select.selectedIndex].text}`, "info");
             }
         }
 
