@@ -118,12 +118,12 @@
     <div class="bg-indigo-950 text-amber-300 text-xs py-2 px-4 border-b border-indigo-900 overflow-hidden relative z-50">
         <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div class="flex items-center gap-2 text-[11px] font-medium tracking-wide truncate">
-                <span class="bg-amber-400 text-indigo-950 px-2 py-0.5 rounded-full font-bold text-[10px]" data-i18n="top_notice_tag">NEWS</span>
-                <span data-i18n="top_notice_text">🌿 水源地文教基金會 ‧ 100% 天然馬藍發酵染色 ‧ 全館全區語音導覽系統運作中</span>
+                <span id="top-notice-tag" class="bg-amber-400 text-indigo-950 px-2 py-0.5 rounded-full font-bold text-[10px]" data-i18n="top_notice_tag">NEWS</span>
+                <span id="top-notice-text" data-i18n="top_notice_text">🌿 水源地文教基金會 ‧ 100% 天然馬藍發酵染色 ‧ 全館全區語音導覽系統運作中</span>
             </div>
             <div class="hidden sm:flex items-center gap-4 text-[11px] text-indigo-200">
-                <span><i class="fa-solid fa-truck-fast text-amber-300 mr-1"></i> <span data-i18n="top_free_ship">滿 NT$ 2,000 享 Pinkoi 宅配免運</span></span>
-                <span><i class="fa-solid fa-phone text-amber-300 mr-1"></i> (04) 2227-7826</span>
+                <span><i class="fa-solid fa-truck-fast text-amber-300 mr-1"></i> <span id="top-free-shipping" data-i18n="top_free_ship">滿 NT$ 2,000 享 Pinkoi 宅配免運</span></span>
+                <span><i class="fa-solid fa-phone text-amber-300 mr-1"></i> <span id="top-phone">(04) 2227-7826</span></span>
             </div>
         </div>
     </div>
@@ -288,23 +288,23 @@
                     <div class="w-full max-w-5xl mx-auto text-center space-y-5 sm:space-y-7">
                         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400 text-indigo-950 text-xs sm:text-sm font-bold shadow-lg">
                             <i class="fa-solid fa-sparkles"></i> 
-                            <span data-i18n="hero_badge">來自台中太平頭汴坑的青綠與湛藍 ‧ 台灣天然手染美學</span>
+                            <span id="hero-badge" data-i18n="hero_badge">來自台中太平頭汴坑的青綠與湛藍 ‧ 台灣天然手染美學</span>
                         </div>
-                        <h2 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-white drop-shadow-md" data-i18n="hero_title">
+                        <h2 id="hero-title" class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-white drop-shadow-md" data-i18n="hero_title">
                             取之於藍，青勝於藍<br>
                             <span class="text-amber-300">登上國際舞台的台灣天然手染工藝</span>
                         </h2>
-                        <p class="text-indigo-100 text-xs sm:text-base leading-relaxed max-w-3xl mx-auto font-light drop-shadow-sm" data-i18n="hero_desc">
+                        <p id="hero-description" class="text-indigo-100 text-xs sm:text-base leading-relaxed max-w-3xl mx-auto font-light drop-shadow-sm" data-i18n="hero_desc">
                             起源於921震後陪伴社區重建的深厚溫情，「太平藍」由財團法人水源地文教基金會輔導創立，堅持純天然馬藍與植物發酵染色，運用絞染、縫染、型染與板夾染等四傳統防染技法，揉合客家紋樣與現代美學。
                         </p>
                         <div class="pt-4 flex flex-wrap justify-center gap-4">
                             <button onclick="toggleTourMode()" class="px-7 py-3 rounded-full bg-amber-400 hover:bg-amber-300 text-indigo-950 font-bold text-xs sm:text-sm shadow-xl hover:scale-105 transition-all flex items-center gap-2">
                                 <i class="fa-solid fa-circle-play text-indigo-950 text-base"></i>
-                                <span data-i18n="hero_btn_explore">開始語音巡禮導覽</span>
+                                <span id="hero-primary-label" data-i18n="hero_btn_explore">開始語音巡禮導覽</span>
                             </button>
-                            <a href="https://www.pinkoi.com/store/taiping-blue" target="_blank" class="px-7 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 text-xs sm:text-sm font-semibold transition hover:scale-105 shadow-md flex items-center gap-2">
+                            <a id="hero-secondary-link" href="https://www.pinkoi.com/store/taiping-blue" target="_blank" class="px-7 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 text-xs sm:text-sm font-semibold transition hover:scale-105 shadow-md flex items-center gap-2">
                                 <i class="fa-solid fa-bag-shopping text-pink-400 text-base"></i>
-                                <span data-i18n="btn_pinkoi">Pinkoi 官方商城</span>
+                                <span id="hero-secondary-label" data-i18n="btn_pinkoi">Pinkoi 官方商城</span>
                             </a>
                         </div>
                     </div>
@@ -329,7 +329,7 @@
                 </span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- News Item 1 -->
                 <div class="group bg-indigo-50/50 hover:bg-indigo-100/70 p-6 rounded-2xl border border-indigo-100 hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md">
                     <div>
@@ -481,12 +481,12 @@
         <!-- Craft Process Section -->
         <section id="sec-soul" class="mt-16 bg-indigo-950 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden scroll-mt-24">
             <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="text-xs font-bold text-amber-300 tracking-widest uppercase block mb-1" data-i18n="soul_subtitle">Heritage & Craftsmanship</span>
-                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white" data-i18n="soul_title">太平藍 的靈魂四工序與四大防染</h3>
-                <p class="text-xs sm:text-sm text-indigo-200 mt-2 leading-relaxed" data-i18n="soul_desc">完全無添加化學色素，順應四季天氣與大自然運轉。經由頭汴坑社區工藝師手作，歷經十幾道反覆浸染。</p>
+                <span id="craft-subtitle" class="text-xs font-bold text-amber-300 tracking-widest uppercase block mb-1" data-i18n="soul_subtitle">Heritage & Craftsmanship</span>
+                <h3 id="craft-title" class="font-serif text-2xl sm:text-3xl font-bold text-white" data-i18n="soul_title">太平藍 的靈魂四工序與四大防染</h3>
+                <p id="craft-description" class="text-xs sm:text-sm text-indigo-200 mt-2 leading-relaxed" data-i18n="soul_desc">完全無添加化學色素，順應四季天氣與大自然運轉。經由頭汴坑社區工藝師手作，歷經十幾道反覆浸染。</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div id="craft-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-indigo-900/80 p-6 rounded-2xl border border-indigo-700/60 text-center space-y-3">
                     <div class="w-12 h-12 bg-amber-400 text-indigo-950 rounded-full flex items-center justify-center font-serif font-bold text-lg mx-auto shadow" data-i18n="step1_num">壹</div>
                     <h4 class="font-serif font-bold text-white text-base" data-i18n="step1_title">採藍與發酵建缸</h4>
@@ -514,16 +514,16 @@
         <section id="sec-stores" class="mt-16 bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm scroll-mt-24">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-slate-200 gap-4">
                 <div>
-                    <span class="text-xs font-bold text-indigo-600 tracking-widest uppercase block mb-1" data-i18n="stores_subtitle">Store Locator & Workshop</span>
-                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-indigo-950" data-i18n="stores_title">門市與據點</h3>
+                    <span id="stores-subtitle" class="text-xs font-bold text-indigo-600 tracking-widest uppercase block mb-1" data-i18n="stores_subtitle">Store Locator & Workshop</span>
+                    <h3 id="stores-title" class="font-serif text-2xl sm:text-3xl font-bold text-indigo-950" data-i18n="stores_title">門市與據點</h3>
                 </div>
-                <a href="https://www.youngwater.org.tw/taiping-blue-%E5%A4%AA%E5%B9%B3%E8%97%8D" target="_blank" class="text-xs font-bold text-indigo-900 hover:underline flex items-center gap-1">
-                    <span>前往水源地官網預約參觀</span>
+                <a id="stores-booking-link" href="https://www.youngwater.org.tw/taiping-blue-%E5%A4%AA%E5%B9%B3%E8%97%8D" target="_blank" class="text-xs font-bold text-indigo-900 hover:underline flex items-center gap-1">
+                    <span id="stores-booking-label">前往水源地官網預約參觀</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div id="stores-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-indigo-50/50 p-6 rounded-2xl border border-indigo-100 space-y-3">
                     <div class="flex items-center justify-between">
                         <h4 class="font-serif font-bold text-indigo-950 text-base flex items-center gap-2">
@@ -793,10 +793,10 @@
                     </div>
                     <div>
                         <h4 class="font-serif font-bold text-sm text-white flex items-center gap-1.5">
-                            <span data-i18n="ai_name">藍藍 ‧ AI 客服導覽員</span>
+                            <span id="ai-name" data-i18n="ai_name">藍藍 ‧ AI 客服導覽員</span>
                             <span class="px-1.5 py-0.2 bg-amber-400 text-indigo-950 text-[9px] font-extrabold rounded-md">Gemini</span>
                         </h4>
-                        <p class="text-[10px] text-indigo-200" data-i18n="ai_subtitle">全天候為您解答太平藍工藝與門市問題</p>
+                        <p id="ai-subtitle" class="text-[10px] text-indigo-200" data-i18n="ai_subtitle">全天候為您解答太平藍工藝與門市問題</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-1">
@@ -817,10 +817,7 @@
             <!-- Quick Question Suggestions -->
             <div class="px-3 py-2 bg-indigo-50/60 border-t border-indigo-100 flex items-center gap-1.5 overflow-x-auto custom-scrollbar shrink-0 text-[11px]">
                 <span class="text-indigo-900 font-bold shrink-0 text-[10px]"><i class="fa-solid fa-wand-magic-sparkles text-amber-500 mr-1"></i><span data-i18n="ai_quick_label">快捷提問:</span></span>
-                <button id="ai-q1-btn" onclick="sendQuickQuestion(this.getAttribute('data-question'))" class="px-2.5 py-1 bg-white hover:bg-indigo-900 hover:text-white text-indigo-900 border border-indigo-200 rounded-full font-medium whitespace-nowrap transition shadow-xs" data-i18n="ai_q1_btn">📍 門市與據點</button>
-                <button id="ai-q2-btn" onclick="sendQuickQuestion(this.getAttribute('data-question'))" class="px-2.5 py-1 bg-white hover:bg-indigo-900 hover:text-white text-indigo-900 border border-indigo-200 rounded-full font-medium whitespace-nowrap transition shadow-xs" data-i18n="ai_q2_btn">👑 經典熱銷作品</button>
-                <button id="ai-q3-btn" onclick="sendQuickQuestion(this.getAttribute('data-question'))" class="px-2.5 py-1 bg-white hover:bg-indigo-900 hover:text-white text-indigo-900 border border-indigo-200 rounded-full font-medium whitespace-nowrap transition shadow-xs" data-i18n="ai_q3_btn">🎨 藍染DIY預約</button>
-                <button id="ai-q4-btn" onclick="sendQuickQuestion(this.getAttribute('data-question'))" class="px-2.5 py-1 bg-white hover:bg-indigo-900 hover:text-white text-indigo-900 border border-indigo-200 rounded-full font-medium whitespace-nowrap transition shadow-xs" data-i18n="ai_q4_btn">🏆 榮譽與新聞</button>
+                <div id="ai-quick-question-list" class="flex items-center gap-1.5"></div>
             </div>
 
             <!-- Chat Input Area -->
@@ -836,7 +833,7 @@
         <div class="pointer-events-auto relative group flex items-center gap-3">
             <div id="ai-robot-hint" class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-indigo-950 text-white text-xs font-medium shadow-xl border border-indigo-700/60 animate-bounce cursor-pointer" onclick="toggleAiChatWindow()">
                 <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-                <span data-i18n="ai_hint">有問題問藍藍 AI 客服！</span>
+                            <span id="ai-hint" data-i18n="ai_hint">有問題問藍藍 AI 客服！</span>
                 <i class="fa-solid fa-caret-right text-indigo-400 text-sm"></i>
             </div>
 
@@ -844,7 +841,7 @@
                 <div class="absolute inset-0 rounded-3xl bg-amber-400/20 animate-pulse blur-md"></div>
                 <div class="relative flex flex-col items-center justify-center space-y-0.5">
                     <i class="fa-solid fa-robot text-2xl sm:text-3xl text-amber-300 group-hover:rotate-12 transition-transform"></i>
-                    <span class="text-[9px] font-extrabold text-amber-300 tracking-wider" data-i18n="ai_badge_btn">AI 客服</span>
+                    <span id="ai-badge" class="text-[9px] font-extrabold text-amber-300 tracking-wider" data-i18n="ai_badge_btn">AI 客服</span>
                 </div>
                 <span class="absolute top-1 right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-indigo-950 rounded-full shadow"></span>
             </button>
@@ -858,25 +855,25 @@
                 <div class="md:col-span-5 space-y-3">
                     <div class="flex items-center gap-2">
                         <div class="w-8 h-8 rounded-xl bg-indigo-800 text-amber-300 flex items-center justify-center font-serif font-bold text-sm border border-indigo-700">藍</div>
-                        <h4 class="font-serif font-bold text-white text-base" data-i18n="footer_org">太平藍染 Taiping Blue</h4>
+                        <h4 id="footer-org" class="font-serif font-bold text-white text-base" data-i18n="footer_org">太平藍染 Taiping Blue</h4>
                     </div>
-                    <p class="text-indigo-300 leading-relaxed text-[11px]" data-i18n="footer_foundation_desc">
+                    <p id="footer-description" class="text-indigo-300 leading-relaxed text-[11px]" data-i18n="footer_foundation_desc">
                         財團法人水源地文教基金會創辦之社區工藝品牌。起於 921 震後陪伴社區重建，推廣傳統天然藍染工藝，陪伴在地婦女與青創生，躍上國際設計舞台。
                     </p>
                 </div>
 
                 <div class="md:col-span-4 space-y-2 text-indigo-300">
-                    <h5 class="font-serif font-bold text-amber-300 text-xs uppercase tracking-wider mb-2" data-i18n="footer_contact_title">聯絡與諮詢資訊</h5>
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-amber-300/80 w-4"></i> <span data-i18n="footer_hours">服務時間：週一至週五 09:00 - 18:00</span></p>
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-300/80 w-4"></i> <span>電話：(04) 2227-7826 ｜ 傳真：(04) 2227-4440</span></p>
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-amber-300/80 w-4"></i> <span>信箱：watersource@mail2000.com.tw</span></p>
-                    <p class="flex items-start gap-2 mt-1"><i class="fa-solid fa-location-dot text-amber-300/80 w-4 mt-0.5"></i> <span data-i18n="footer_headquarter">基金會會址：40444 臺中市北區育才街三巷3號3樓之4</span></p>
-                    <p class="flex items-start gap-2"><i class="fa-solid fa-house-chimney-craft text-amber-300/80 w-4 mt-0.5"></i> <span data-i18n="footer_workshop">頭汴坑工坊：臺中市太平區頭汴里長龍路四段 (生態園區內)</span></p>
+                    <h5 id="footer-contact-title" class="font-serif font-bold text-amber-300 text-xs uppercase tracking-wider mb-2" data-i18n="footer_contact_title">聯絡與諮詢資訊</h5>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-amber-300/80 w-4"></i> <span id="footer-hours" data-i18n="footer_hours">服務時間：週一至週五 09:00 - 18:00</span></p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-300/80 w-4"></i> <span id="footer-phone">電話：(04) 2227-7826 ｜ 傳真：(04) 2227-4440</span></p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-amber-300/80 w-4"></i> <span id="footer-email">信箱：watersource@mail2000.com.tw</span></p>
+                    <p class="flex items-start gap-2 mt-1"><i class="fa-solid fa-location-dot text-amber-300/80 w-4 mt-0.5"></i> <span id="footer-headquarter" data-i18n="footer_headquarter">基金會會址：40444 臺中市北區育才街三巷3號3樓之4</span></p>
+                    <p class="flex items-start gap-2"><i class="fa-solid fa-house-chimney-craft text-amber-300/80 w-4 mt-0.5"></i> <span id="footer-workshop" data-i18n="footer_workshop">頭汴坑工坊：臺中市太平區頭汴里長龍路四段 (生態園區內)</span></p>
                 </div>
 
                 <div class="md:col-span-3 space-y-3 md:text-right">
-                    <h5 class="font-serif font-bold text-amber-300 text-xs uppercase tracking-wider mb-2" data-i18n="footer_links_title">官方線上平臺</h5>
-                    <div class="flex flex-col md:items-end gap-2">
+                    <h5 id="footer-links-title" class="font-serif font-bold text-amber-300 text-xs uppercase tracking-wider mb-2" data-i18n="footer_links_title">官方線上平臺</h5>
+                    <div id="footer-links" class="flex flex-col md:items-end gap-2">
                         <a href="https://www.youngwater.org.tw/taiping-blue-%E5%A4%AA%E5%B9%B3%E8%97%8D" target="_blank" class="inline-flex items-center gap-1.5 hover:text-amber-300 transition text-indigo-300"><i class="fa-solid fa-globe"></i> 水源地文教基金會官網</a>
                         <a href="https://www.pinkoi.com/store/taiping-blue" target="_blank" class="inline-flex items-center gap-1.5 hover:text-amber-300 transition text-pink-400"><i class="fa-solid fa-bag-shopping"></i> Pinkoi 官方設計館</a>
                         <a href="https://www.facebook.com/Taipingblue/?locale=zh_TW" target="_blank" class="inline-flex items-center gap-1.5 hover:text-amber-300 transition text-indigo-300"><i class="fa-brands fa-facebook"></i> Facebook 官方粉絲專頁</a>
@@ -1502,8 +1499,142 @@ const defaultProductsData = [
         // GitHub Pages mode reads the catalogue from the repository. When the
         // local Node server is running we still prefer its API, then fall back
         // to the committed JSON file so the same page works in both modes.
+        const defaultNewsData = [
+            { id: 'news1', legacyKey: 'news1', badge: '臺灣工藝獎', source: '元丰傳媒', url: 'https://www.yuanfengmedia.tw/detail.php?type=catalog&catalog_id=2&id=24979', badgeClass: 'amber' },
+            { id: 'news2', legacyKey: 'news2', badge: '教育部貢獻獎', source: '文化部新聞', url: 'https://www.moc.gov.tw/News_Content.aspx?n=105&s=95524', badgeClass: 'indigo' },
+            { id: 'news3', legacyKey: 'news3', badge: '國際大獎入選', source: 'TBC 新聞報導', url: 'https://www.youtube.com/watch?v=RsaLQYZhVLk', badgeClass: 'rose' },
+            { id: 'news4', legacyKey: 'news4', badge: '國家人才發展獎', source: '文化部新聞', url: 'https://www.moc.gov.tw/News_Content.aspx?n=105&s=57930', badgeClass: 'emerald' },
+            { id: 'news5', legacyKey: 'news5', badge: '國際展會亮點', source: '威傳媒 WinNews', url: 'https://www.winnews.com.tw/105921/', badgeClass: 'purple' }
+        ];
         let productsData = [];
+        let newsData = [];
+        let siteContent = null;
         let productsReady = false;
+
+        async function loadSiteContent() {
+            try {
+                const source = new URL('backend/data/site-content.json', document.baseURI).href;
+                const response = await fetch(`${source}?v=${Date.now()}`, { headers: { 'Accept': 'application/json' }, cache: 'no-store' });
+                if (!response.ok) return null;
+                const data = await response.json();
+                return data && typeof data === 'object' ? data : null;
+            } catch (_) { return null; }
+        }
+
+        function safeContentUrl(value) {
+            try { const url = new URL(value || '#', document.baseURI); return /^https?:$/i.test(url.protocol) ? url.href : '#'; }
+            catch (_) { return '#'; }
+        }
+
+        function renderCraftContent() {
+            const dict = i18nDict[currentLang] || i18nDict.zh;
+            const craft = currentLang === 'zh' && siteContent?.craft ? siteContent.craft : null;
+            const subtitle = craft?.subtitle || dict.soul_subtitle;
+            const title = craft?.title || dict.soul_title;
+            const description = craft?.description || dict.soul_desc;
+            document.getElementById('craft-subtitle').textContent = subtitle;
+            document.getElementById('craft-title').textContent = title;
+            document.getElementById('craft-description').textContent = description;
+            const steps = craft?.steps || [1,2,3,4].map(index => ({ num: dict[`step${index}_num`], title: dict[`step${index}_title`], description: dict[`step${index}_desc`] }));
+            const grid = document.getElementById('craft-grid');
+            if (grid) grid.innerHTML = steps.map(step => `<div class="bg-indigo-900/80 p-6 rounded-2xl border border-indigo-700/60 text-center space-y-3"><div class="w-12 h-12 bg-amber-400 text-indigo-950 rounded-full flex items-center justify-center font-serif font-bold text-lg mx-auto shadow">${escapeHtml(step.num || '')}</div><h4 class="font-serif font-bold text-white text-base">${escapeHtml(step.title || '')}</h4><p class="text-xs text-indigo-200 leading-relaxed">${escapeHtml(step.description || '')}</p></div>`).join('');
+        }
+
+        function renderStoresContent() {
+            const dict = i18nDict[currentLang] || i18nDict.zh;
+            const stores = currentLang === 'zh' && Array.isArray(siteContent?.stores?.items) ? siteContent.stores.items : [1,2].map(index => ({ id: `store${index}`, title: dict[`store${index}_title`], address: dict[`store${index}_addr`], hours: dict[`store${index}_time`], phone: dict[`store${index}_phone`], icon: index === 1 ? 'fa-house-chimney-craft' : 'fa-building-columns', badge: index === 1 ? '開放參觀 / DIY' : '總部行政', badgeClass: index === 1 ? 'emerald' : 'indigo' }));
+            const storesConfig = currentLang === 'zh' && siteContent?.stores ? siteContent.stores : { subtitle: dict.stores_subtitle, title: dict.stores_title, bookingLabel: '前往水源地官網預約參觀', bookingUrl: 'https://www.youngwater.org.tw/taiping-blue-%E5%A4%AA%E5%B9%B3%E8%97%8D' };
+            document.getElementById('stores-subtitle').textContent = storesConfig.subtitle || dict.stores_subtitle;
+            document.getElementById('stores-title').textContent = storesConfig.title || dict.stores_title;
+            document.getElementById('stores-booking-label').textContent = storesConfig.bookingLabel || '';
+            document.getElementById('stores-booking-link').href = safeContentUrl(storesConfig.bookingUrl);
+            const grid = document.getElementById('stores-grid');
+            if (grid) grid.innerHTML = stores.map(store => `<div class="bg-indigo-50/50 p-6 rounded-2xl border border-indigo-100 space-y-3"><div class="flex items-center justify-between"><h4 class="font-serif font-bold text-indigo-950 text-base flex items-center gap-2"><i class="fa-solid ${escapeHtml(store.icon || 'fa-store')} text-indigo-700"></i><span>${escapeHtml(store.title || '')}</span></h4><span class="px-2.5 py-0.5 ${store.badgeClass === 'emerald' ? 'bg-emerald-100 text-emerald-800' : 'bg-indigo-100 text-indigo-800'} rounded-full text-[10px] font-bold">${escapeHtml(store.badge || '')}</span></div><p class="text-xs text-slate-600 flex items-start gap-2"><i class="fa-solid fa-location-dot text-indigo-700 mt-0.5"></i><span>${escapeHtml(store.address || '')}</span></p><p class="text-xs text-slate-600 flex items-center gap-2"><i class="fa-solid fa-clock text-indigo-700"></i><span>${escapeHtml(store.hours || '')}</span></p><p class="text-xs text-slate-600 flex items-center gap-2"><i class="fa-solid fa-phone text-indigo-700"></i><span>${escapeHtml(store.phone || '')}</span></p></div>`).join('');
+        }
+
+        function renderFooterContent() {
+            const dict = i18nDict[currentLang] || i18nDict.zh;
+            const footer = currentLang === 'zh' && siteContent?.footer ? siteContent.footer : null;
+            if (!footer) return;
+            document.getElementById('footer-org').textContent = footer.org || dict.footer_org;
+            document.getElementById('footer-description').textContent = footer.description || dict.footer_foundation_desc;
+            document.getElementById('footer-contact-title').textContent = footer.contactTitle || dict.footer_contact_title;
+            document.getElementById('footer-hours').textContent = footer.hours || dict.footer_hours;
+            document.getElementById('footer-phone').textContent = footer.phone || '';
+            document.getElementById('footer-email').textContent = footer.email || '';
+            document.getElementById('footer-headquarter').textContent = footer.headquarter || dict.footer_headquarter;
+            document.getElementById('footer-workshop').textContent = footer.workshop || dict.footer_workshop;
+            const links = document.getElementById('footer-links');
+            if (links && Array.isArray(footer.links)) links.innerHTML = footer.links.map(link => `<a href="${escapeHtml(safeContentUrl(link.url))}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-amber-300 transition ${escapeHtml(link.className || 'text-indigo-300')}"><i class="fa-solid ${escapeHtml(link.icon || 'fa-link')}"></i> ${escapeHtml(link.label || '')}</a>`).join('');
+        }
+
+        function applySiteContent() {
+            const dict = i18nDict[currentLang] || i18nDict.zh;
+            const isChineseOverride = currentLang === 'zh' && siteContent;
+            if (isChineseOverride) {
+                const hero = siteContent.hero || {}; const top = siteContent.topNotice || {}; const ai = siteContent.ai || {};
+                document.getElementById('top-notice-tag').textContent = top.tag || dict.top_notice_tag; document.getElementById('top-notice-text').textContent = top.text || dict.top_notice_text; document.getElementById('top-free-shipping').textContent = top.freeShipping || dict.top_free_ship; document.getElementById('top-phone').textContent = top.phone || '';
+                document.getElementById('hero-badge').textContent = hero.badge || dict.hero_badge; document.getElementById('hero-title').innerHTML = `${escapeHtml(hero.title || dict.hero_title)}<br><span class="text-amber-300">${escapeHtml(hero.accent || '')}</span>`; document.getElementById('hero-description').textContent = hero.description || dict.hero_desc; document.getElementById('hero-primary-label').textContent = hero.primaryLabel || dict.hero_btn_explore; document.getElementById('hero-secondary-label').textContent = hero.secondaryLabel || dict.btn_pinkoi; document.getElementById('hero-secondary-link').href = safeContentUrl(hero.secondaryUrl || 'https://www.pinkoi.com/store/taiping-blue');
+                document.getElementById('ai-name').textContent = ai.name || dict.ai_name; document.getElementById('ai-subtitle').textContent = ai.subtitle || dict.ai_subtitle; document.getElementById('ai-hint').textContent = ai.hint || dict.ai_hint; document.getElementById('ai-badge').textContent = ai.badge || dict.ai_badge_btn; document.getElementById('ai-chat-input').placeholder = ai.inputPlaceholder || dict.ai_input_placeholder;
+                if (Array.isArray(ai.quickQuestions)) ai.quickQuestions.slice(0, 4).forEach((item, index) => { const button = document.getElementById(`ai-q${index + 1}-btn`); if (button) { button.textContent = item.label || ''; button.dataset.question = item.question || ''; } });
+            }
+            renderCraftContent(); renderStoresContent(); renderFooterContent();
+        }
+
+        async function loadNewsData() {
+            try {
+                const source = new URL('backend/data/news.json', document.baseURI).href;
+                const response = await fetch(`${source}?v=${Date.now()}`, { headers: { 'Accept': 'application/json' }, cache: 'no-store' });
+                if (response.ok) {
+                    const data = await response.json();
+                    if (Array.isArray(data)) return data;
+                }
+            } catch (_) { /* Use the original five cards when the data file is unavailable. */ }
+            return defaultNewsData.map(item => ({ ...item }));
+        }
+
+        function safeNewsUrl(value) {
+            try {
+                const url = new URL(value || '#', document.baseURI);
+                return /^https?:$/i.test(url.protocol) ? url.href : '#';
+            } catch (_) { return '#'; }
+        }
+
+        function newsText(item, field) {
+            const dict = i18nDict[currentLang] || i18nDict.zh;
+            const key = item.legacyKey ? `${item.legacyKey}_${field}` : '';
+            return (currentLang === 'zh' && item[field]) || (key && dict[key]) || item[field] || '';
+        }
+
+        function renderNewsCards() {
+            const grid = document.getElementById('news-grid');
+            if (!grid) return;
+            const badgeClasses = {
+                amber: 'bg-amber-100 text-amber-900',
+                indigo: 'bg-indigo-100 text-indigo-900',
+                rose: 'bg-rose-100 text-rose-900',
+                emerald: 'bg-emerald-100 text-emerald-900',
+                purple: 'bg-purple-100 text-purple-900'
+            };
+            const badgeKeys = { news1: 'news_badge_craft', news2: 'news_badge_edu', news3: 'news_badge_global', news4: 'news_badge_hr', news5: 'news_badge_exhibition' };
+            const items = Array.isArray(newsData) ? newsData : [];
+            grid.innerHTML = items.length ? items.map(item => {
+                const title = newsText(item, 'title');
+                const description = newsText(item, 'description');
+                const badge = (currentLang === 'zh' && item.badge) || (item.legacyKey && (i18nDict[currentLang] || i18nDict.zh)[badgeKeys[item.legacyKey]]) || item.badge || '';
+                const url = safeNewsUrl(item.url);
+                const badgeClass = badgeClasses[item.badgeClass] || badgeClasses.indigo;
+                return `<div class="group bg-indigo-50/50 hover:bg-indigo-100/70 p-6 rounded-2xl border border-indigo-100 hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md">
+                    <div><div class="flex items-center justify-between gap-2 mb-2"><span class="px-2.5 py-0.5 ${badgeClass} rounded-full text-[10px] font-bold">${escapeHtml(badge)}</span><span class="text-[11px] text-slate-400 font-medium">${escapeHtml(item.source || '')}</span></div>
+                    <div class="flex items-start justify-between gap-2"><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="font-serif font-bold text-indigo-950 group-hover:text-indigo-700 text-sm leading-snug transition flex-1">${escapeHtml(title)}</a><button data-news-audio="${escapeHtml(title)}" class="news-audio w-7 h-7 rounded-full bg-indigo-950 text-amber-300 hover:bg-amber-400 hover:text-indigo-950 flex items-center justify-center shrink-0 transition" title="朗讀標題"><i class="fa-solid fa-volume-high text-xs"></i></button></div>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed line-clamp-3 font-light">${escapeHtml(description)}</p></div>
+                    <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between pt-3 border-t border-indigo-100 text-xs text-indigo-800 font-semibold group-hover:translate-x-1 transition-transform"><span data-i18n="news_read_more">${escapeHtml((i18nDict[currentLang] || i18nDict.zh).news_read_more)}</span><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                </div>`;
+            }).join('') : `<div class="col-span-full text-sm text-slate-500">${escapeHtml((i18nDict[currentLang] || i18nDict.zh).news_title || '')}</div>`;
+            grid.querySelectorAll('.news-audio').forEach(button => button.addEventListener('click', event => {
+                event.preventDefault(); event.stopPropagation(); playAudioText(button.dataset.newsAudio || '', '新聞標題導覽');
+            }));
+        }
 
         async function loadProductsData() {
             const candidates = [];
@@ -1568,13 +1699,15 @@ const defaultProductsData = [
                 aiInput.placeholder = i18nDict[currentLang]?.ai_input_placeholder || i18nDict.zh.ai_input_placeholder;
             }
 
-            // Update quick-question labels and their submitted question text
+            // Render quick-question labels and their submitted question text
             // explicitly. These buttons are dynamic chat controls, so they
             // should not rely only on the generic data-i18n pass above.
             const dict = i18nDict[currentLang] || i18nDict.zh;
             updateAiQuickQuestions(dict);
 
             renderAiWelcomeMessage();
+            renderNewsCards();
+            applySiteContent();
 
             const langSelect = document.getElementById('lang-select');
             if (langSelect) langSelect.value = currentLang;
@@ -1587,14 +1720,12 @@ const defaultProductsData = [
         }
 
         function updateAiQuickQuestions(dict) {
-            for (let i = 1; i <= 4; i++) {
-                const qBtn = document.getElementById(`ai-q${i}-btn`);
-                if (!qBtn) continue;
-                const label = dict[`ai_q${i}_btn`] || i18nDict.zh[`ai_q${i}_btn`];
-                const question = dict[`ai_q${i}_text`] || i18nDict.zh[`ai_q${i}_text`];
-                qBtn.textContent = label;
-                qBtn.setAttribute('data-question', question);
-            }
+            const container = document.getElementById('ai-quick-question-list');
+            if (!container) return;
+            const configured = currentLang === 'zh' && Array.isArray(siteContent?.ai?.quickQuestions)
+                ? siteContent.ai.quickQuestions.filter(item => item && (item.label || item.question))
+                : [1, 2, 3, 4].map(index => ({ label: dict[`ai_q${index}_btn`] || i18nDict.zh[`ai_q${index}_btn`], question: dict[`ai_q${index}_text`] || i18nDict.zh[`ai_q${index}_text`] }));
+            container.innerHTML = configured.map((item, index) => `<button id="ai-q${index + 1}-btn" onclick="sendQuickQuestion(this.getAttribute('data-question'))" class="px-2.5 py-1 bg-white hover:bg-indigo-900 hover:text-white text-indigo-900 border border-indigo-200 rounded-full font-medium whitespace-nowrap transition shadow-xs" data-question="${escapeHtml(item.question || '')}">${escapeHtml(item.label || '')}</button>`).join('');
         }
 
         // Product names/descriptions are available in every supported UI language.
@@ -2358,7 +2489,8 @@ const defaultProductsData = [
             const msgBox = document.getElementById('ai-chat-messages');
             if (!msgBox) return;
 
-            const welcomeHtml = i18nDict[currentLang]?.ai_welcome || i18nDict.zh.ai_welcome;
+            const configuredWelcome = currentLang === 'zh' ? siteContent?.ai?.welcome : '';
+            const welcomeHtml = configuredWelcome ? configuredWelcome.split(/\n+/).filter(Boolean).map(line => `<p>${escapeHtml(line)}</p>`).join('') : (i18nDict[currentLang]?.ai_welcome || i18nDict.zh.ai_welcome);
 
             msgBox.innerHTML = `
                 <div class="flex items-start gap-2.5">
@@ -2865,7 +2997,7 @@ const defaultProductsData = [
 
         window.onload = async function() {
             try {
-                productsData = await loadProductsData();
+                [productsData, newsData, siteContent] = await Promise.all([loadProductsData(), loadNewsData(), loadSiteContent()]);
                 productsReady = true;
                 changeLanguage('zh');
                 filterCategory('all', false);

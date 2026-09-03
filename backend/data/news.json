@@ -1,0 +1,52 @@
+[
+  {
+    "id": "news1",
+    "legacyKey": "news1",
+    "badge": "臺灣工藝獎",
+    "source": "元丰傳媒",
+    "url": "https://www.yuanfengmedia.tw/detail.php?type=catalog&catalog_id=2&id=24979",
+    "title": "太平藍榮獲文化部工藝中心「2023臺灣工藝獎-協作獎」為台灣社區產業塑立典範",
+    "description": "來自台中太平頭汴坑的客家社區產業太平藍，帶領年輕設計師及在地中高齡工藝師，以客家藍染與世界接軌，榮獲工藝界最高的榮譽！",
+    "badgeClass": "amber"
+  },
+  {
+    "id": "news2",
+    "legacyKey": "news2",
+    "badge": "教育部貢獻獎",
+    "source": "文化部新聞",
+    "url": "https://www.moc.gov.tw/News_Content.aspx?n=105&s=95524",
+    "title": "臺中太平藍榮獲教育部「111年度社會教育貢獻獎」藍染社區工藝走向國際",
+    "description": "經營「太平藍」社區產業品牌，以藍染工藝文化與環保永續特色帶動社區發展，榮獲全國推展社會教育最高榮譽肯定。",
+    "badgeClass": "indigo"
+  },
+  {
+    "id": "news3",
+    "legacyKey": "news3",
+    "badge": "國際大獎入選",
+    "source": "TBC 新聞報導",
+    "url": "https://www.youtube.com/watch?v=RsaLQYZhVLk",
+    "title": "台灣唯一！太平藍團隊創作作品《流域記憶》成功登上義大利瓦爾切利納獎決選",
+    "description": "從全球三百多件國際作品中脫穎而出，成為本屆唯一入選決選的台灣作品，讓台灣在地植物染與纖維藝術驚艷世界。",
+    "badgeClass": "rose"
+  },
+  {
+    "id": "news4",
+    "legacyKey": "news4",
+    "badge": "國家人才發展獎",
+    "source": "文化部新聞",
+    "url": "https://www.moc.gov.tw/News_Content.aspx?n=105&s=57930",
+    "title": "臺中太平藍染榮獲勞動部「國家人才發展獎」殊榮 藍染工藝融入人才培育",
+    "description": "第二度榮獲勞動部最高等級人力資源獎項，將傳統手染工藝培育社區婦女與青年，走向倫敦工藝週與巴黎展會。",
+    "badgeClass": "emerald"
+  },
+  {
+    "id": "news5",
+    "legacyKey": "news5",
+    "badge": "國際展會亮點",
+    "source": "威傳媒 WinNews",
+    "url": "https://www.winnews.com.tw/105921/",
+    "title": "臺中藍染社區工藝「太平藍」躍上倫敦工藝週、巴黎家具家飾展與台北時裝週",
+    "description": "曾獲新加坡國際家具展最佳裝飾工藝品評審團大獎，四度入選臺北時裝週，展現台灣工藝強大文化韌性與國際競爭力。",
+    "badgeClass": "purple"
+  }
+]

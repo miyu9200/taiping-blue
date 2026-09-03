@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "badge": "來自台中太平頭汴坑的青綠與湛藍 ‧ 台灣天然手染美學",
+    "title": "取之於藍，青勝於藍",
+    "accent": "登上國際舞台的台灣天然手染工藝",
+    "description": "起源於921震後陪伴社區重建的深厚溫情，「太平藍」由財團法人水源地文教基金會輔導創立，堅持純天然馬藍與植物發酵染色，運用絞染、縫染、型染與板夾染等四傳統防染技法，揉合客家紋樣與現代美學。",
+    "primaryLabel": "開始語音巡禮導覽",
+    "secondaryLabel": "Pinkoi 官方商城",
+    "secondaryUrl": "https://www.pinkoi.com/store/taiping-blue"
+  },
+  "topNotice": {
+    "tag": "NEWS",
+    "text": "🌿 水源地文教基金會 ‧ 100% 天然馬藍發酵染色 ‧ 全館全區語音導覽系統運作中",
+    "freeShipping": "滿 NT$ 2,000 享 Pinkoi 宅配免運",
+    "phone": "(04) 2227-7826"
+  },
+  "craft": {
+    "subtitle": "Heritage & Craftsmanship",
+    "title": "太平藍 的靈魂四工序與四大防染",
+    "description": "完全無添加化學色素，順應四季天氣與大自然運轉。經由頭汴坑社區工藝師手作，歷經十幾道反覆浸染。",
+    "steps": [
+      { "num": "壹", "title": "採藍與發酵建缸", "description": "夏季採集山區馬藍葉片，經浸泡、加麥芽糖與石灰天然發酵沉澱提煉藍靛。" },
+      { "num": "貳", "title": "四大傳統防染技法", "description": "活用線繩綁紮(絞染)、針線手縫(縫染)、糊劑塗刷(型染)或造型木具(板夾染)，設計藍白分明花紋。" },
+      { "num": "參", "title": "低溫反覆揉捏浸染", "description": "將布料放入常溫藍缸中手工揉捏，使色素緊密滲入纖維，浸染多達12次以上。" },
+      { "num": "肆", "title": "陽光氧化自然滲染", "description": "原本黃綠色的染布接觸空氣與陽光後轉為湛藍，呈現絕美對比與自然滲染的手染風格。" }
+    ]
+  },
+  "stores": {
+    "subtitle": "Store Locator & Workshop",
+    "title": "門市與據點",
+    "bookingLabel": "前往水源地官網預約參觀",
+    "bookingUrl": "https://www.youngwater.org.tw/taiping-blue-%E5%A4%AA%E5%B9%B3%E8%97%8D",
+    "items": [
+      { "id": "store1", "title": "頭汴坑染織工坊", "badge": "開放參觀 / DIY", "address": "地址：411台中市太平區東汴里長龍路四段20號", "hours": "營業時間：星期三到星期日：9：00~18：00", "phone": "聯絡方式：04-2270-5188", "icon": "fa-house-chimney-craft", "badgeClass": "emerald" },
+      { "id": "store2", "title": "財團法人水源地文教基金會", "badge": "總部行政", "address": "地址：404台中市北區新北里育才街3巷3號3樓之4", "hours": "營業時間：星期一到星期五：9：00到18：00", "phone": "聯絡方式：04-2227-7826", "icon": "fa-building-columns", "badgeClass": "indigo" }
+    ]
+  },
+  "footer": {
+    "org": "太平藍染 Taiping Blue",
+    "description": "財團法人水源地文教基金會創辦之社區工藝品牌。起於 921 震後陪伴社區重建，推廣傳統天然藍染工藝，陪伴在地婦女與青創生，躍上國際設計舞台。",
+    "contactTitle": "聯絡與諮詢資訊",
+    "hours": "服務時間：週一至週五 09:00 - 18:00",
+    "phone": "電話：(04) 2227-7826 ｜ 傳真：(04) 2227-4440",
+    "email": "信箱：watersource@mail2000.com.tw",
+    "headquarter": "基金會會址：40444 臺中市北區育才街三巷3號3樓之4",
+    "workshop": "頭汴坑工坊：臺中市太平區頭汴里長龍路四段 (生態園區內)",
+    "links": [
+      { "label": "水源地文教基金會官網", "url": "https://www.youngwater.org.tw/taiping-blue-%E5%A4%AA%E5%B9%B3%E8%97%8D", "icon": "fa-globe", "className": "text-indigo-300" },
+      { "label": "Pinkoi 官方設計館", "url": "https://www.pinkoi.com/store/taiping-blue", "icon": "fa-bag-shopping", "className": "text-pink-400" },
+      { "label": "Facebook 官方粉絲專頁", "url": "https://www.facebook.com/Taipingblue/?locale=zh_TW", "icon": "fa-facebook", "className": "text-indigo-300" }
+    ]
+  },
+  "ai": {
+    "name": "藍藍 ‧ AI 客服導覽員",
+    "subtitle": "全天候為您解答太平藍工藝與門市問題",
+    "welcome": "您好！我是太平藍的 AI 智慧導覽員「藍藍」 🌿\n您可以詢問我關於傳統藍染工藝、商品特色、體驗DIY、全台門市地址或獲獎報導等任何問題喔！",
+    "hint": "有問題問藍藍 AI 客服！",
+    "badge": "AI 客服",
+    "inputPlaceholder": "請問關於太平藍藍染...",
+    "quickQuestions": [
+      { "label": "📍 門市與據點", "question": "請問太平藍的頭汴坑工坊門市地址與營業時間？" },
+      { "label": "👑 經典熱銷作品", "question": "請問太平藍有哪些熱門經典作品？" },
+      { "label": "🎨 藍染DIY預約", "question": "如何預約藍染手作 DIY 體驗行程？" },
+      { "label": "🏆 榮譽與新聞", "question": "太平藍品牌的創立背景與獲獎新聞有哪些？" }
+    ]
+  }
+}
